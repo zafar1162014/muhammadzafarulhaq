@@ -155,7 +155,11 @@ export function HeroSection() {
               <Link href="#contact">Get In Touch</Link>
             </Button>
             <Button asChild variant="secondary" size="lg" className="gap-2">
-              <a href="/MUHAMMAD-ZAFAR-UL-HAQ.pdf" download="Muhammad-Zafar-Ul-Haq-Resume.pdf">
+              <a
+                href="https://drive.google.com/file/d/1B3DUDZVwgPF1XVpa8vVku_JOjfJQzqz3/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="h-4 w-4" />
                 Download Resume
               </a>

@@ -1,10 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Github, Folder, ExternalLink, FileText, BookOpen } from "lucide-react"
+import { Github, Folder, FileText, BookOpen } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
 
 const researchPublications = [
   {
@@ -14,36 +13,6 @@ const researchPublications = [
     description:
       "Comprehensive research on harnessing the full potential of YOLO for real-time object detection, exploring advanced optimization techniques and deployment strategies.",
     link: "https://www.researchgate.net/publication/390115067_Redefining_Object_Detection_Harnessing_the_Full_Potential_of_YOLO",
-  },
-]
-
-const featuredProjects = [
-  {
-    title: "Sentiment Analysis Engine (NLP)",
-    description:
-      "Advanced NLP pipeline using BERT and transformers for multi-class sentiment classification. Achieved 94% accuracy on social media data with custom fine-tuning, attention visualization, and real-time inference API deployment.",
-    technologies: ["Python", "BERT", "Transformers", "FastAPI", "Docker"],
-    github: "https://github.com/zafar1162014",
-    image: "/sentiment-analysis-cover.jpg",
-    size: "Large",
-  },
-  {
-    title: "Real-Time Object Detection System",
-    description:
-      "Production-grade computer vision system using YOLOv8 for multi-object detection and tracking. Optimized for edge deployment with TensorRT, achieving 60+ FPS on surveillance and traffic monitoring use cases.",
-    technologies: ["Python", "YOLOv8", "OpenCV", "TensorRT", "CUDA"],
-    github: "https://github.com/zafar1162014",
-    image: "/object-detection-cover.jpg",
-    size: "Large",
-  },
-  {
-    title: "AI-Powered Resume Screening Platform",
-    description:
-      "End-to-end ML platform for automated resume parsing and candidate ranking. Uses NER for entity extraction, skill matching algorithms, and GPT integration for intelligent scoring. Deployed for a recruitment agency.",
-    technologies: ["Python", "spaCy", "GPT-4", "React", "PostgreSQL"],
-    github: "https://github.com/zafar1162014",
-    image: "/resume-screening-cover.jpg",
-    size: "Large",
   },
 ]
 
@@ -237,75 +206,9 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        {/* Featured Projects */}
-        <div className="space-y-24 mb-24">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className={cn("relative grid md:grid-cols-12 gap-4 items-center", index % 2 === 1 && "md:text-right")}
-            >
-              <div
-                className={cn(
-                  "md:col-span-7 relative rounded-lg overflow-hidden group aspect-video",
-                  index % 2 === 1 ? "md:col-start-6" : "",
-                )}
-              >
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
-                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                <div className="absolute top-4 right-4 z-20 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                  {project.size} Project
-                </div>
-              </div>
-
-              <div
-                className={cn(
-                  "md:col-span-6 md:absolute md:top-1/2 md:-translate-y-1/2 z-20",
-                  index % 2 === 1 ? "md:left-0" : "md:right-0",
-                )}
-              >
-                <p className="text-primary font-mono text-sm mb-2">Featured Project</p>
-                <h3 className="text-2xl font-bold text-foreground mb-4">{project.title}</h3>
-                <div className="bg-card p-6 rounded-lg shadow-lg mb-4 border border-border">
-                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
-                </div>
-                <div
-                  className={cn(
-                    "flex flex-wrap gap-3 mb-4 text-sm font-mono text-muted-foreground",
-                    index % 2 === 1 && "md:justify-start",
-                  )}
-                >
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="bg-primary/10 px-2 py-1 rounded text-primary">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className={cn("flex gap-4", index % 2 === 1 && "md:justify-start")}>
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="h-5 w-5" />
-                  </Link>
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Other Projects */}
+        {/* Other Projects - Now the main projects section */}
         <div className="text-center mb-12">
-          <h3 className="text-xl font-semibold text-foreground mb-2">Other Noteworthy Projects</h3>
+          <h3 className="text-xl font-semibold text-foreground mb-2">Noteworthy Projects</h3>
           <Link
             href="https://github.com/zafar1162014"
             target="_blank"
@@ -368,6 +271,15 @@ export function ProjectsSection() {
             </button>
           </div>
         )}
+
+        <div className="mt-16 text-center">
+          <div className="inline-block bg-card border border-border rounded-lg px-6 py-4">
+            <p className="text-muted-foreground text-sm">
+              Completed many <span className="text-primary font-semibold">small</span> and{" "}
+              <span className="text-primary font-semibold">large</span> paid projects for clients
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )

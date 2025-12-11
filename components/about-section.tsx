@@ -102,20 +102,20 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              I'm a Product and Project Management professional with a strong foundation in software engineering, AI &
-              ML, full-stack development, and data-driven problem solving.
+              I am a passionate Product and Project Management professional with a strong foundation in software
+              engineering and hands-on experience in AI and ML research. I specialize in leading teams, managing
+              projects end-to-end, and turning ideas into actionable solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Experienced in leading student organizations, IEEE chapters, and community programs, with hands-on
-              exposure to coding, backend development, data analysis, and AI model implementation. Skilled in
-              requirement gathering, workflow planning, documentation, event coordination, teaching, and team
-              management.
+              I have practical experience in backend development using Node.js and implementing data-driven ML projects.
+              Beyond technical expertise, I have successfully led student organizations, IEEE chapters, and community
+              programs, developing skills in requirement gathering, workflow planning, documentation, event
+              coordination, teaching, and team management.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently pursuing BS Computer Science at the{" "}
-              <span className="text-primary">University of Central Punjab</span> with a CGPA of 3.81/4.00. I'm
-              passionate about delivering structured, impactful solutions and building scalable technical products while
-              fostering leadership and mentorship.
+              <span className="text-primary">University of Central Punjab</span>
+              {" – "}
+              <span className="text-primary font-semibold">100% Merit Scholarship Holder</span>
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Here are some technologies and skills I've been working with:

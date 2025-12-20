@@ -258,7 +258,11 @@ export function ResumeSection() {
               </button>
             ))}
             <Button variant="outline" className="mt-4 gap-2 bg-transparent" asChild>
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://drive.google.com/file/d/1wdBKcvWox2y9T_d1ScU_x58ko5I7vkyy/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="h-4 w-4" />
                 Download CV
               </a>

@@ -11,9 +11,9 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Muhammad Zafar Ul Haq | Portfolio",
   description:
-    "Product & Project Manager | AI & Software Enthusiast - Personal portfolio showcasing projects, skills, and experience.",
-  keywords: ["Product Manager", "Project Manager", "AI", "Machine Learning", "Full Stack Developer", "Portfolio"],
-    generator: 'v0.app'
+    "Project Management Aspirant | AI & Software Enthusiast - Personal portfolio showcasing projects, skills, and experience.",
+  keywords: ["Project Manager", "Project Management", "AI", "Machine Learning", "Full Stack Developer", "Portfolio"],
+  generator: "v0.app",
 }
 
 export default function RootLayout({

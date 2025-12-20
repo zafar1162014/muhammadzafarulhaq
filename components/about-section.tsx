@@ -102,15 +102,16 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              I am a passionate Product and Project Management professional with a strong foundation in software
-              engineering and hands-on experience in AI and ML research. I specialize in leading teams, managing
-              projects end-to-end, and turning ideas into actionable solutions.
+              I am a passionate Project Management aspirant with a strong foundation in software engineering and
+              hands-on experience in AI and ML research. I specialize in leading teams, managing projects end-to-end,
+              and turning ideas into actionable solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               I have practical experience in backend development using Node.js and implementing data-driven ML projects.
-              Beyond technical expertise, I have successfully led student organizations, IEEE chapters, and community
-              programs, developing skills in requirement gathering, workflow planning, documentation, event
-              coordination, teaching, and team management.
+              Completed all 7 courses of the Google Project Management Certificate. Beyond technical expertise, I have
+              successfully led student organizations, IEEE chapters, and community programs, developing skills in
+              requirement gathering, workflow planning, documentation, event coordination, teaching, and team
+              management.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               <span className="text-primary">University of Central Punjab</span>

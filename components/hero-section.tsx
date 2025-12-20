@@ -139,12 +139,12 @@ export function HeroSection() {
           <p className="text-primary mb-4 font-mono">Hi, my name is</p>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-4">Muhammad Zafar Ul Haq</h1>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-muted-foreground mb-6">
-            Product & Project Manager | AI & Software Enthusiast
+            Project Management Aspirant | AI & Software Enthusiast
           </h2>
           <p className="text-muted-foreground max-w-xl mb-8 text-lg leading-relaxed">
-            I build accessible, pixel-perfect digital experiences with a strong foundation in software engineering, AI &
-            ML, and full-stack development. Currently focused on delivering structured, impactful solutions and building
-            scalable technical products.
+            Aspiring Project Manager with strong academic background in Computer Science and hands-on experience in
+            leading academic and client projects. Skilled in Agile execution, risk management, stakeholder coordination,
+            and delivering high-quality technical solutions.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">

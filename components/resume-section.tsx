@@ -116,17 +116,13 @@ const education = [
 ]
 
 const certifications = [
-  "IBM Product Manager (Coursera, 2025)",
-  "IBM AI Product Manager (Coursera, 2025)",
+  "Google Project Management Certificate (Coursera, 2025) – Foundations, Project Initiation, Project Planning, Project Execution, Agile Project Management, Capstone",
   "AWS Cloud Foundations (AWS Academy)",
-  "Python for Data Science (IBM)",
+  "Python for Data Science, AI Development (IBM)",
   "Node & Express (Coursera)",
-  "UI/UX for Beginners (Great Learning)",
   "Version Control (Meta)",
   "MongoDB Bulk API (MongoDB University)",
   "Career Planning: Your Career, Your Life (Macquarie University)",
-  "Scam Awareness Course",
-  "HTML5 Introduction",
 ]
 
 const awards = [
@@ -262,11 +258,7 @@ export function ResumeSection() {
               </button>
             ))}
             <Button variant="outline" className="mt-4 gap-2 bg-transparent" asChild>
-              <a
-                href="https://drive.google.com/file/d/1wdBKcvWox2y9T_d1ScU_x58ko5I7vkyy/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="h-4 w-4" />
                 Download CV
               </a>

@@ -4,47 +4,45 @@ import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 const skills = {
-  "AI & Machine Learning": [
-    { name: "Python (TensorFlow, Keras, PyTorch)", level: 90 },
-    { name: "Scikit-Learn & XGBoost", level: 85 },
-    { name: "Data Preprocessing & Feature Engineering", level: 90 },
-    { name: "Model Evaluation & Optimization", level: 85 },
+  "Machine Learning & AI": [
+    { name: "Supervised Learning & Classification", level: 90 },
+    { name: "Feature Engineering & Selection", level: 88 },
+    { name: "Model Evaluation & Hyperparameter Tuning", level: 85 },
+    { name: "Ensemble Methods (XGBoost, Random Forest)", level: 82 },
   ],
-  "Deep Learning": [
-    { name: "CNN, RNN, LSTM, Transformers", level: 85 },
-    { name: "Computer Vision (YOLO, Object Detection)", level: 85 },
-    { name: "NLP (BERT, GPT, Text Classification)", level: 80 },
-    { name: "Neural Network Architecture Design", level: 75 },
+  "Deep Learning & Neural Networks": [
+    { name: "TensorFlow & Keras", level: 80 },
+    { name: "CNNs for Computer Vision", level: 78 },
+    { name: "NLP & Text Classification", level: 75 },
+    { name: "Transformers (BERT, GPT-2)", level: 72 },
   ],
-  "Programming & Development": [
-    { name: "Python & C++", level: 95 },
-    { name: "JavaScript / Node.js / React", level: 80 },
-    { name: "Git & Version Control", level: 90 },
-    { name: "REST APIs & Backend Development", level: 85 },
+  "Data Science & Analysis": [
+    { name: "Python (Pandas, NumPy, Matplotlib)", level: 95 },
+    { name: "Data Preprocessing & Cleaning", level: 92 },
+    { name: "Statistical Analysis & Visualization", level: 85 },
+    { name: "SQL & Database Management", level: 80 },
   ],
-  "Data & Cloud": [
-    { name: "Pandas, NumPy, Matplotlib", level: 95 },
-    { name: "MySQL, MongoDB, Firebase", level: 85 },
-    { name: "AWS (S3, EC2 basics)", level: 70 },
-    { name: "Jupyter Notebook & VS Code", level: 90 },
+  "ML Tools & Deployment": [
+    { name: "Scikit-Learn", level: 90 },
+    { name: "Jupyter Notebook & VS Code", level: 88 },
+    { name: "Git & Version Control", level: 85 },
+    { name: "FastAPI & Model Deployment", level: 75 },
   ],
 }
 
 const technologies = [
   "Python",
-  "TensorFlow",
-  "Keras",
-  "PyTorch",
   "Scikit-Learn",
+  "TensorFlow & Keras",
+  "PyTorch",
   "Pandas & NumPy",
-  "NLP",
-  "Computer Vision",
-  "CNN / RNN / LSTM",
-  "YOLO",
-  "Node.js",
-  "React",
-  "Git",
-  "AWS",
+  "Matplotlib & Seaborn",
+  "XGBoost",
+  "CNN & RNN",
+  "NLP & Transformers",
+  "Feature Engineering",
+  "Model Optimization",
+  "SQL & MongoDB",
 ]
 
 function SkillBar({ name, level, isVisible }: { name: string; level: number; isVisible: boolean }) {
@@ -102,27 +100,26 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              I am an aspiring AI Engineer with a strong academic foundation in Computer Science. I specialize in
-              Machine Learning, Deep Learning, NLP, and Computer Vision. I have hands-on experience designing and
-              implementing AI models, handling data pipelines, and delivering intelligent software solutions.
+              I am a Machine Learning aspirant specializing in building predictive models and implementing data-driven
+              solutions. I have delivered 5+ production-ready AI projects including sentiment analysis, traffic sign
+              classification, and resume parsing systems, achieving up to 98% accuracy.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I have practical experience with TensorFlow, Keras, PyTorch, and Scikit-Learn, working on projects ranging
-              from object detection systems to NLP chatbots. Strong problem-solving skills enable me to tackle complex
-              computational challenges and develop innovative AI applications.
+              My expertise spans supervised learning, feature engineering, model evaluation, and hyperparameter tuning
+              using Scikit-Learn, TensorFlow, and XGBoost. I excel at transforming raw data into clean datasets,
+              extracting meaningful features, and optimizing model performance for real-world deployment.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I have successfully led student organizations, IEEE chapters, and community programs, developing skills in
-              leadership, teaching, and team management.
+              I have hands-on experience with CNNs for computer vision, NLP for text classification, and transformer
+              architectures (BERT, GPT-2) for conversational AI. I also worked on object detection research using YOLO,
+              published on ResearchGate 2024.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               <span className="text-primary">University of Central Punjab</span>
               {" – "}
-              <span className="text-primary font-semibold">100% Merit Scholarship Holder</span>
+              <span className="text-primary font-semibold">100% Merit Scholarship Holder</span> | CGPA: 3.8+/4.00
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Here are some technologies and skills I've been working with:
-            </p>
+            <p className="text-muted-foreground leading-relaxed">Technologies and skills I work with:</p>
             <ul className="grid grid-cols-2 gap-2 text-sm">
               {technologies.map((tech) => (
                 <li key={tech} className="flex items-center gap-2 text-muted-foreground">

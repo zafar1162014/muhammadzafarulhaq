@@ -139,12 +139,13 @@ export function HeroSection() {
           <p className="text-primary mb-4 font-mono">Hi, my name is</p>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-4">Muhammad Zafar Ul Haq</h1>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-muted-foreground mb-6">
-            Aspiring AI Engineer | ML & Deep Learning Enthusiast
+            Aspiring Machine Learning Engineer
           </h2>
           <p className="text-muted-foreground max-w-xl mb-8 text-lg leading-relaxed">
-            Aspiring AI Engineer with a strong academic foundation in Computer Science. Skilled in Machine Learning,
-            Deep Learning, NLP, and Computer Vision. Passionate about creating scalable AI systems and contributing to
-            research and practical projects.
+            Machine Learning aspirant with hands-on experience in building predictive models, implementing deep learning
+            solutions, and optimizing ML pipelines. Proficient in Python, Scikit-Learn, TensorFlow, and data
+            preprocessing. Passionate about transforming data into actionable insights and deploying intelligent
+            systems.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">

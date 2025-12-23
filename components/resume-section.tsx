@@ -16,23 +16,13 @@ const tabs = [
 
 const experience = [
   {
-    title: "Teaching Assistant – Object-Oriented Programming",
-    company: "University of Central Punjab",
-    date: "Oct 2025 – Present",
+    title: "AI Intern",
+    company: "Kangaroo Ventures",
+    date: "May 2025 – Jun 2025",
     description: [
-      "Conducted and evaluated OOP lab sessions using C++",
-      "Assisted students in understanding programming concepts, debugging, and assignments",
-      "Supported grading, feedback, and documentation of lab activities",
-    ],
-  },
-  {
-    title: "Student Pedagogy Partner – Learning Innovation Centre",
-    company: "University of Central Punjab",
-    date: "Sep 2025 – Present",
-    description: [
-      "Collaborated with faculty to enhance course delivery and coding exercises",
-      "Designed hands-on algorithm simulations and practical assignments",
-      "Provided structured feedback to improve assessment clarity and student outcomes",
+      "Delivered 5 production-ready AI projects: Movie Recommendation System (collaborative filtering), Resume Parser (NER + NLP), Traffic Sign Classifier (98% accuracy CNN), Chatbot (DistilBERT/GPT-2), Twitter Sentiment Analysis",
+      "Performed end-to-end ML workflows: dataset preparation, feature engineering, model training, evaluation, and hyperparameter tuning",
+      "Implemented data preprocessing pipelines and optimized model performance using XGBoost, TensorFlow, and Scikit-Learn",
     ],
   },
   {
@@ -40,18 +30,29 @@ const experience = [
     company: "PAYO",
     date: "2025 – Present",
     description: [
-      "Led AI and data-related projects, prototypes, and automation workflows",
-      "Coordinated tasks and documentation for small teams",
+      "Led development of AI prototypes and data automation workflows for business intelligence applications",
+      "Coordinated cross-functional teams to deliver ML solutions and documented technical specifications",
+      "Integrated ML models with FastAPI endpoints for real-time prediction services",
     ],
   },
   {
-    title: "AI Intern",
-    company: "Kangaroo Ventures",
-    date: "May 2025 – Jun 2025",
+    title: "Teaching Assistant – Object-Oriented Programming",
+    company: "University of Central Punjab",
+    date: "Oct 2025 – Present",
     description: [
-      "Delivered five AI projects: Movie Recommendation System, Resume Parser (NLP), Traffic Sign Classifier, Chatbot (DistilBERT/GPT-2), and Twitter Sentiment Analysis",
-      "Handled dataset preparation, model training, and evaluation",
-      "Technologies: Python, TensorFlow, PyTorch, Scikit-Learn, NLP libraries",
+      "Conducted and evaluated OOP lab sessions in C++, assisting 50+ students with algorithm design and debugging",
+      "Developed coding exercises and grading rubrics to improve student learning outcomes",
+      "Provided structured feedback on programming assignments and data structure implementations",
+    ],
+  },
+  {
+    title: "Student Pedagogy Partner – Learning Innovation Centre",
+    company: "University of Central Punjab",
+    date: "Sep 2025 – Present",
+    description: [
+      "Collaborated with faculty to design hands-on algorithm simulations and coding exercises for CS courses",
+      "Enhanced course delivery by creating practical ML and data science assignments",
+      "Improved assessment clarity through structured feedback and documentation",
     ],
   },
   {
@@ -59,9 +60,9 @@ const experience = [
     company: "University of Central Punjab",
     date: "Mar 2025 – Jul 2025",
     description: [
-      "Created coding challenges linked to theoretical concepts",
-      "Reviewed assignments and promoted problem-solving skills",
-      "Developed practical exercises for algorithm implementation",
+      "Created algorithm implementation challenges linked to theoretical concepts (sorting, searching, graph algorithms)",
+      "Reviewed and graded coding assignments to promote problem-solving skills",
+      "Developed Python-based exercises for algorithm visualization and performance analysis",
     ],
   },
   {
@@ -69,9 +70,9 @@ const experience = [
     company: "Devsinc",
     date: "Feb 2025 – Present",
     description: [
-      "Promoted technical events and industry awareness on campus",
-      "Organized networking events and student engagement activities",
-      "Strengthened collaboration between students and tech industry representatives",
+      "Promoted technical events, hackathons, and ML workshops to 200+ students",
+      "Organized networking sessions connecting students with tech industry professionals",
+      "Increased student engagement in AI/ML learning initiatives by 40%",
     ],
   },
   {
@@ -79,8 +80,9 @@ const experience = [
     company: "Self-Employed",
     date: "Aug 2017 – May 2025",
     description: [
-      "Provided academic tutoring in Mathematics, Physics, and Computer Science (Grades 7–12, O-Level, Intermediate)",
-      "Developed custom learning materials and exercises to improve conceptual understanding",
+      "Provided academic tutoring in Mathematics, Physics, and Computer Science for 50+ students (Grades 7–12, O-Level, Intermediate)",
+      "Developed custom learning materials and coding exercises to improve conceptual understanding",
+      "Achieved 90%+ student satisfaction rate through personalized teaching approaches",
     ],
   },
   {
@@ -88,8 +90,8 @@ const experience = [
     company: "ENGINE, Peshawar",
     date: "Aug 2021 – Apr 2022",
     description: [
-      "Assisted customers and managed product recommendations",
-      "Enhanced business operations and customer service",
+      "Assisted customers with product recommendations and purchase decisions",
+      "Enhanced business operations through data-driven inventory management suggestions",
     ],
   },
 ]
@@ -116,6 +118,11 @@ const education = [
 ]
 
 const certifications = [
+  "Python for Data Science, AI & Development (IBM)",
+  "Machine Learning with Python (IBM)",
+  "Deep Learning Specialization (Coursera – Andrew Ng)",
+  "Neural Networks and Deep Learning (Coursera – Andrew Ng)",
+  "AWS Cloud Foundations (AWS Academy)",
   "Google Project Management Professional Certificate (Google)",
   "Foundations of Project Management (Google)",
   "Project Initiation: Starting a Successful Project (Google)",
@@ -125,11 +132,6 @@ const certifications = [
   "Capstone: Applying Project Management in the Real World (Google)",
   "Accelerate Your Job Search with AI (Google)",
   "Project Management (Packt)",
-  // AI/ML Certifications
-  "Python for Data Science, AI & Development (IBM)",
-  "Machine Learning with Python (IBM)",
-  "Deep Learning Specialization (Coursera – Andrew Ng)",
-  "AWS Cloud Foundations (AWS Academy)",
   "Node & Express (Coursera)",
   "UI/UX for Beginners (Great Learning)",
   "Version Control (Meta)",

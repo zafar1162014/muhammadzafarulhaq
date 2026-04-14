@@ -1,30 +1,40 @@
-# Resume analysis
+# Muhammad Zafar Ul Haq Portfolio
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Modern Next.js portfolio for machine learning and AI work, designed to be deployed on GitHub Pages.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/zafar1162014s-projects/v0-resume-analysis)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/lESw6O2H1CF)
+## Run Locally
 
-## Overview
+1. Install dependencies:
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+```bash
+npm install
+```
 
-## Deployment
+2. Start development server:
 
-Your project is live at:
+```bash
+npm run dev
+```
 
-**[https://vercel.com/zafar1162014s-projects/v0-resume-analysis](https://vercel.com/zafar1162014s-projects/v0-resume-analysis)**
+3. Open http://localhost:3000
 
-## Build your app
+## Deploy to GitHub Pages
 
-Continue building your app on:
+This repository includes a workflow at `.github/workflows/deploy.yml` that deploys automatically on pushes to `main`.
 
-**[https://v0.app/chat/lESw6O2H1CF](https://v0.app/chat/lESw6O2H1CF)**
+### One-time GitHub setup
 
-## How It Works
+1. Go to repository `Settings > Pages`.
+2. Set source to `GitHub Actions`.
+3. Push changes to `main`.
+4. Wait for workflow `Deploy Portfolio to GitHub Pages` to finish.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Your site URL will be:
+
+- User page repo (`username.github.io`): `https://username.github.io/`
+- Project repo: `https://username.github.io/repository-name/`
+
+## Notes
+
+- Static export is enabled through Next.js `output: "export"`.
+- `basePath` and `assetPrefix` are auto-calculated from `GITHUB_REPOSITORY` during production builds.

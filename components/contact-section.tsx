@@ -3,7 +3,6 @@
 import type React from 'react';
 
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import {
 	Mail,
 	Linkedin,
@@ -36,55 +35,19 @@ export function ContactSection() {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-		const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-		const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+		const mailtoSubject = encodeURIComponent(
+			formData.subject || 'Portfolio Contact',
+		);
+		const mailtoBody = encodeURIComponent(
+			`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+		);
 
-		if (!serviceId || !templateId || !publicKey) {
-			const mailtoSubject = encodeURIComponent(formData.subject || 'Portfolio Contact');
-			const mailtoBody = encodeURIComponent(
-				`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-			);
-
-			window.location.href = `mailto:zafarulhaq1162014@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-			setSubmitState({
-				type: 'success',
-				message:
-					'Your email app is opening so you can send this message directly.',
-			});
-			return;
-		}
-
-		setIsSubmitting(true);
-		setSubmitState({ type: null, message: '' });
-
-		try {
-			await emailjs.send(
-				serviceId,
-				templateId,
-				{
-					from_name: formData.name,
-					from_email: formData.email,
-					subject: formData.subject,
-					message: formData.message,
-				},
-				{ publicKey },
-			);
-
-			setSubmitState({
-				type: 'success',
-				message: 'Message sent successfully. Thank you for reaching out.',
-			});
-			setFormData({ name: '', email: '', subject: '', message: '' });
-		} catch {
-			setSubmitState({
-				type: 'error',
-				message:
-					'Something went wrong while sending your message. Please try again or email me directly.',
-			});
-		} finally {
-			setIsSubmitting(false);
-		}
+		window.location.href = `mailto:zafarulhaq1162014@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+		setSubmitState({
+			type: 'success',
+			message: 'Your email app is opening so you can send this message directly.',
+		});
+		setFormData({ name: '', email: '', subject: '', message: '' });
 	};
 
 	const handleChange = (

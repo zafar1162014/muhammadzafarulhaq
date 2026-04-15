@@ -41,10 +41,16 @@ export function ContactSection() {
 		const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 		if (!serviceId || !templateId || !publicKey) {
+			const mailtoSubject = encodeURIComponent(formData.subject || 'Portfolio Contact');
+			const mailtoBody = encodeURIComponent(
+				`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+			);
+
+			window.location.href = `mailto:zafarulhaq1162014@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 			setSubmitState({
-				type: 'error',
+				type: 'success',
 				message:
-					'Contact form is not configured yet. Please try again later or email me directly.',
+					'Your email app is opening so you can send this message directly.',
 			});
 			return;
 		}

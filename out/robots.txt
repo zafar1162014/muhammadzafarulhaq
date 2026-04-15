@@ -1,0 +1,25 @@
+# robots.txt for Muhammad Zafar Ul Haq Portfolio
+# Allow search engines to crawl and index the site
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /out/
+
+# Slow down aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Point to sitemap
+Sitemap: https://muhammadzafarulhaq.com/sitemap.xml
+
+# Standard crawlers: no delays
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

@@ -28,8 +28,9 @@ const researchPaper = {
 export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
-	const { theme, setTheme } = useTheme();
+	const { resolvedTheme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
+	const isDark = resolvedTheme === 'dark';
 
 	useEffect(() => {
 		setMounted(true);
@@ -78,14 +79,15 @@ export function Header() {
 					{mounted && (
 						<Button
 							variant="ghost"
-							size="icon"
-							onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-							className="ml-2">
-							{theme === 'dark' ? (
-								<Sun className="h-5 w-5" />
+							onClick={() => setTheme(isDark ? 'light' : 'dark')}
+							className="ml-2 gap-2 rounded-full px-4"
+							aria-label="Toggle night mode">
+							{isDark ? (
+								<Sun className="h-4 w-4" />
 							) : (
-								<Moon className="h-5 w-5" />
+								<Moon className="h-4 w-4" />
 							)}
+							<span className="text-xs font-medium">Night Mode</span>
 						</Button>
 					)}
 				</div>
@@ -95,8 +97,9 @@ export function Header() {
 						<Button
 							variant="ghost"
 							size="icon"
-							onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-							{theme === 'dark' ? (
+							onClick={() => setTheme(isDark ? 'light' : 'dark')}
+							aria-label="Toggle night mode">
+							{isDark ? (
 								<Sun className="h-5 w-5" />
 							) : (
 								<Moon className="h-5 w-5" />
@@ -133,6 +136,20 @@ export function Header() {
 							<FileText className="h-4 w-4 text-primary" />
 							View Publication ({researchPaper.year})
 						</a>
+						<button
+							type="button"
+							onClick={() => {
+								setTheme(isDark ? 'light' : 'dark');
+								setIsOpen(false);
+							}}
+							className="inline-flex w-fit items-center gap-2 text-sm px-3 py-2 rounded-full border border-border bg-card/70 text-foreground">
+							{isDark ? (
+								<Sun className="h-4 w-4" />
+							) : (
+								<Moon className="h-4 w-4" />
+							)}
+							Night Mode
+						</button>
 					</div>
 				</div>
 			)}

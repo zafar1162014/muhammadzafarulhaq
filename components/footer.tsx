@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Instagram, Facebook, Mail } from 'lucide-react';
 
 export function Footer() {
 	return (
@@ -20,6 +20,20 @@ export function Footer() {
 							rel="noopener noreferrer"
 							className="text-muted-foreground hover:text-primary transition-colors">
 							<Linkedin className="h-5 w-5" />
+						</Link>
+						<Link
+							href="https://www.instagram.com/zafarulhaq1162014/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-muted-foreground hover:text-primary transition-colors">
+							<Instagram className="h-5 w-5" />
+						</Link>
+						<Link
+							href="https://www.facebook.com/zafarulhaq1162014/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-muted-foreground hover:text-primary transition-colors">
+							<Facebook className="h-5 w-5" />
 						</Link>
 						<Link
 							href="mailto:zafarulhaq1162014@gmail.com"

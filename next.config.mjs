@@ -1,4 +1,8 @@
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 /** @type {import('next').NextConfig} */
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
 const isUserPageRepo = repositoryName.endsWith('.github.io');
 const isProduction = process.env.NODE_ENV === 'production';
@@ -15,6 +19,9 @@ const nextConfig = {
 	},
 	images: {
 		unoptimized: true,
+	},
+	turbopack: {
+		root: __dirname,
 	},
 };
 

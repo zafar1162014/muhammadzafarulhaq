@@ -1,12 +1,6 @@
 'use client';
 
-import {
-	BookOpen,
-	BriefcaseBusiness,
-	FileText,
-	FolderKanban,
-	Github,
-} from 'lucide-react';
+import { BookOpen, BriefcaseBusiness, FileText, Github } from 'lucide-react';
 import Link from 'next/link';
 
 const finalYearProject = {
@@ -89,55 +83,67 @@ const githubRepoGroups = [
 	},
 ];
 
-const internshipTopLevel = [
-	'AGENTING MODE WITH SELF HEALING',
-	'AI powered virtual Tutor',
-	'AgenticAI',
-	'AgenticAI - Copy',
-	'predictive',
-	'predictive - Copy',
-	'chromeextension',
-	'kasla task',
-	'mathtutor',
-	'medical',
-	'model train',
-];
-
-const internshipNestedGroups = [
+const importantProjects = [
 	{
-		category: 'Day-wise Learning',
-		projects: ['Day 2', 'Day 3', 'Day 6'],
+		title: 'Self-Healing Retrieval Assistant',
+		description:
+			'Retrieval-based AI assistant that reads local data files, searches relevant context, and retries when the first response is not sufficient.',
 	},
 	{
-		category: 'Computer Vision',
-		projects: [
-			'Face_Blur',
-			'facial_expression',
-			'human activity',
-			'objectDetection',
-			'cloth_suiting',
-		],
+		title: 'AI-Powered Virtual Tutor (FastAPI + Ollama)',
+		description:
+			'FastAPI tutoring application that explains questions step by step using an Ollama model for interactive learning support.',
 	},
 	{
-		category: 'NLP & Text',
-		projects: [
-			'NLP',
-			'intent classification',
-			'Resume Embedding Semantic Search',
-			'Resume Embedding Semantic Search - Copy',
-		],
+		title: 'AgenticAI Multi-Tool Chatbot',
+		description:
+			'Tool-using chatbot with weather, time, calculator, reminder, and web-search functions, integrated with a knowledge base.',
 	},
 	{
-		category: 'Data & Embeddings',
-		projects: ['RAG', 'Resume', 'convertor', 'embedd', 'medical'],
+		title: 'Automated Proposal Generator Chrome Extension',
+		description:
+			'Browser-based workflow automation extension for faster proposal generation and repetitive task handling.',
 	},
-];
-
-const quickStats = [
-	{ label: 'GitHub Repositories', value: '27' },
-	{ label: 'Internship Top-Level Projects', value: '11' },
-	{ label: 'Internship Nested Projects', value: '20+' },
-	{ label: 'Overall Portfolio Projects', value: '58+' },
+	{
+		title: 'Text-to-SQL Query Generator',
+		description:
+			'Natural language to SQL conversion project for translating user prompts into executable database queries.',
+	},
+	{
+		title: 'Math Tutor Model Training Pipeline',
+		description:
+			'Math tutoring project focused on dataset preparation, training workflows, and answer-generation quality improvement.',
+	},
+	{
+		title: 'Homeopathic Symptom Suggestion System',
+		description:
+			'Medical suggestion system that recommends homeopathic options based on user-reported symptoms.',
+	},
+	{
+		title: 'Machine Learning Training Framework',
+		description:
+			'Reusable framework for model training and dataset experimentation across classification and regression tasks.',
+	},
+	{
+		title: 'Predictive Vision Analysis (Emotion + Gaze)',
+		description:
+			'Webcam-based predictive project combining emotion detection and gaze tracking for real-time behavioral insights.',
+	},
+	{
+		title: 'Computer Vision Toolkit',
+		description:
+			'Collection of vision tasks including face blur, facial expression recognition, human activity recognition, object detection, and apparel analysis.',
+	},
+	{
+		title: 'Resume Semantic Search with Embeddings',
+		description:
+			'NLP project for intent classification and embedding-based resume search to improve candidate matching quality.',
+	},
+	{
+		title: 'RAG and Data Conversion Utilities',
+		description:
+			'Retrieval-augmented generation experiments plus practical data conversion utilities for preprocessing and downstream workflows.',
+	},
 ];
 
 export function ProjectsSection() {
@@ -192,19 +198,6 @@ export function ProjectsSection() {
 							</span>
 						))}
 					</div>
-				</div>
-
-				<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-					{quickStats.map((stat) => (
-						<div
-							key={stat.label}
-							className="glass-surface p-5">
-							<p className="text-3xl font-semibold text-primary mb-1">
-								{stat.value}
-							</p>
-							<p className="text-sm text-muted-foreground">{stat.label}</p>
-						</div>
-					))}
 				</div>
 
 				{/* Research Publications Section */}
@@ -278,47 +271,32 @@ export function ProjectsSection() {
 					</div>
 				</div>
 
-				<div className="grid lg:grid-cols-2 gap-4">
-					<div className="glass-surface p-6">
-						<h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-							<BriefcaseBusiness className="h-5 w-5 text-primary" />
-							Internship Top-Level Projects
-						</h3>
-						<div className="flex flex-wrap gap-2">
-							{internshipTopLevel.map((project) => (
-								<span
-									key={project}
-									className="text-xs sm:text-sm bg-secondary px-3 py-1.5 rounded-full text-foreground">
-									{project}
-								</span>
-							))}
-						</div>
+				<div className="glass-surface p-6">
+					<h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+						<BriefcaseBusiness className="h-5 w-5 text-primary" />
+						Important Projects
+					</h3>
+					<div className="grid md:grid-cols-2 gap-4">
+						{importantProjects.map((project) => (
+							<div
+								key={project.title}
+								className="rounded-lg border border-border bg-secondary/30 px-4 py-3">
+								<h4 className="text-sm sm:text-base font-semibold text-foreground mb-1">
+									{project.title}
+								</h4>
+								<p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+									{project.description}
+								</p>
+							</div>
+						))}
 					</div>
+				</div>
 
-					<div className="glass-surface p-6">
-						<h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-							<FolderKanban className="h-5 w-5 text-primary" />
-							Internship Nested Projects (20+)
-						</h3>
-						<div className="space-y-4">
-							{internshipNestedGroups.map((group) => (
-								<div key={group.category}>
-									<h4 className="text-sm font-semibold text-primary mb-2">
-										{group.category}
-									</h4>
-									<div className="flex flex-wrap gap-2">
-										{group.projects.map((project) => (
-											<span
-												key={project}
-												className="text-xs sm:text-sm bg-secondary/70 px-2.5 py-1 rounded-md text-foreground">
-												{project}
-											</span>
-										))}
-									</div>
-								</div>
-							))}
-						</div>
-					</div>
+				<div className="mt-8 glass-surface p-5 text-center">
+					<p className="text-muted-foreground text-sm sm:text-base">
+						I have also completed lots of client projects across ML, data
+						analysis, web apps, and automation work.
+					</p>
 				</div>
 			</div>
 		</section>

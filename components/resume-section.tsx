@@ -24,82 +24,60 @@ const tabs = [
 
 const experience = [
 	{
-		title: 'AI Intern',
-		company: 'Kangaroo Ventures',
-		date: 'May 2025 – Jun 2025',
+		title: 'Data Science Intern',
+		company: '10Pearls',
+		date: 'Mar 2026 – Present',
 		description: [
-			'Delivered 5 production-ready AI projects: Movie Recommendation System (collaborative filtering), Resume Parser (NER + NLP), Traffic Sign Classifier (98% accuracy CNN), Chatbot (DistilBERT/GPT-2), Twitter Sentiment Analysis',
-			'Performed end-to-end ML workflows: dataset preparation, feature engineering, model training, evaluation, and hyperparameter tuning',
-			'Implemented data preprocessing pipelines and optimized model performance using XGBoost, TensorFlow, and Scikit-Learn',
+			'Working on end-to-end data analysis, ML pipeline development, and model optimization for enterprise datasets.',
+		],
+	},
+	{
+		title: 'Teaching Assistant – OOP (C++) & PF (Programming Fundamentals)',
+		company: 'University of Central Punjab',
+		date: 'Oct 2025 – Present',
+		description: [
+			'Conducting lab sessions, designing assignments, and mentoring students in object-oriented programming and algorithms.',
+		],
+	},
+	{
+		title: 'Devsinc (CAP Idol) – Campus Ambassador Program',
+		company: 'Devsinc',
+		date: 'Feb 2025 – Present',
+		description: [
+			'Managing recruitment campaigns and engagement initiatives across Pakistan universities.',
+			'Platinum (Jan 2026 – Present) · Gold (Nov 2025 – Jan 2026) · Silver (Aug 2025 – Nov 2025)',
 		],
 	},
 	{
 		title: 'Lead – AI & Data Innovation (Remote)',
 		company: 'PAYO',
-		date: '2025 – Present',
+		date: '2025 – Mar 2026',
 		description: [
-			'Led development of AI prototypes and data automation workflows for business intelligence applications',
-			'Coordinated cross-functional teams to deliver ML solutions and documented technical specifications',
-			'Integrated ML models with FastAPI endpoints for real-time prediction services',
+			'Led AI/ML strategy, data-driven product initiatives, and infrastructure planning across the organization.',
 		],
 	},
 	{
-		title: 'Teaching Assistant – Object-Oriented Programming',
+		title: 'AI Intern',
+		company: 'Kangaroo Ventures',
+		date: 'May 2025 – Jun 2025',
+		description: [
+			'Developed NLP, computer vision, and recommendation systems using PyTorch and Transformers.',
+		],
+	},
+	{
+		title: 'Student Pedagogy Partner – LIC, DAA & MVC',
 		company: 'University of Central Punjab',
-		date: 'Oct 2025 – Present',
+		date: 'Mar 2025 – Mar 2026',
 		description: [
-			'Conducted and evaluated OOP lab sessions in C++, assisting 50+ students with algorithm design and debugging',
-			'Developed coding exercises and grading rubrics to improve student learning outcomes',
-			'Provided structured feedback on programming assignments and data structure implementations',
+			'Designed coding exercises, algorithm visualizations, and problem-solving frameworks for core CS courses.',
 		],
 	},
 	{
-		title: 'Student Pedagogy Partner – Learning Innovation Centre',
-		company: 'University of Central Punjab',
-		date: 'Sep 2025 – Present',
+		title: 'Founder – Chair IEEE Computer Society UCP Chapter',
+		company: 'IEEE Computer Society UCP Chapter',
+		date: 'Jun 2024 – Oct 2025',
 		description: [
-			'Collaborated with faculty to design hands-on algorithm simulations and coding exercises for CS courses',
-			'Enhanced course delivery by creating practical ML and data science assignments',
-			'Improved assessment clarity through structured feedback and documentation',
-		],
-	},
-	{
-		title: 'Student Pedagogy Partner – Design & Analysis of Algorithms',
-		company: 'University of Central Punjab',
-		date: 'Mar 2025 – Jul 2025',
-		description: [
-			'Created algorithm implementation challenges linked to theoretical concepts (sorting, searching, graph algorithms)',
-			'Reviewed and graded coding assignments to promote problem-solving skills',
-			'Developed Python-based exercises for algorithm visualization and performance analysis',
-		],
-	},
-	{
-		title: 'Campus Ambassador / Silver Ambassador',
-		company: 'Devsinc',
-		date: 'Feb 2025 – Present',
-		description: [
-			'Promoted technical events, hackathons, and ML workshops to 200+ students',
-			'Organized networking sessions connecting students with tech industry professionals',
-			'Increased student engagement in AI/ML learning initiatives by 40%',
-		],
-	},
-	{
-		title: 'Home & Online Tutor',
-		company: 'Self-Employed',
-		date: 'Aug 2017 – May 2025',
-		description: [
-			'Provided academic tutoring in Mathematics, Physics, and Computer Science for 50+ students (Grades 7–12, O-Level, Intermediate)',
-			'Developed custom learning materials and coding exercises to improve conceptual understanding',
-			'Achieved 90%+ student satisfaction rate through personalized teaching approaches',
-		],
-	},
-	{
-		title: 'Sales Assistant',
-		company: 'ENGINE, Peshawar',
-		date: 'Aug 2021 – Apr 2022',
-		description: [
-			'Assisted customers with product recommendations and purchase decisions',
-			'Enhanced business operations through data-driven inventory management suggestions',
+			'Led technical workshops, industry collaborations, and 200+ member engagement initiatives.',
 		],
 	},
 ];
@@ -292,11 +270,10 @@ export function ResumeSection() {
 							className="mt-4 gap-2 bg-transparent"
 							asChild>
 							<a
-								href="https://drive.google.com/file/d/1wdBKcvWox2y9T_d1ScU_x58ko5I7vkyy/view?usp=sharing"
-								target="_blank"
-								rel="noopener noreferrer">
+								href="/resume.pdf"
+								download="Muhammad-Zafar-Resume.pdf">
 								<Download className="h-4 w-4" />
-								Download CV
+								Download Resume
 							</a>
 						</Button>
 					</div>

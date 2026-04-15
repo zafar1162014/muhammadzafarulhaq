@@ -18,31 +18,70 @@ const bodyFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-	title: 'Muhammad Zafar Ul Haq | Machine Learning Engineer Portfolio',
+	title:
+		'Muhammad Zafar Ul Haq | Final-Year CS Student & Machine Learning Engineer',
 	description:
-		'Portfolio of Muhammad Zafar Ul Haq, focused on machine learning engineering, deep learning, and data-driven product development.',
+		'Explore the portfolio of Muhammad Zafar Ul Haq, a final-year computer science student specializing in machine learning, deep learning, and data-driven applications. View projects, experience, and technical skills.',
 	keywords: [
 		'Machine Learning Engineer',
-		'Machine Learning',
-		'Artificial Intelligence',
-		'Data Science',
+		'Computer Science Student',
+		'Machine Learning Projects',
 		'Deep Learning',
-		'Python',
-		'Scikit-Learn',
+		'Data Science',
+		'Python Developer',
 		'TensorFlow',
-		'Keras',
 		'PyTorch',
-		'Feature Engineering',
-		'Model Optimization',
 		'Computer Vision',
 		'NLP',
-		'Predictive Modeling',
-		'Supervised Learning',
-		'Neural Networks',
-		'CNN',
-		'Data Analysis',
 	],
-	generator: 'v0.app',
+	applicationName: 'Muhammad Zafar Portfolio',
+	creator: 'Muhammad Zafar Ul Haq',
+	metadataBase: new URL('https://muhammadzafarulhaq.com'),
+	alternates: {
+		canonical: '/',
+	},
+	openGraph: {
+		type: 'website',
+		url: '/',
+		title: 'Muhammad Zafar Ul Haq | CS Student Portfolio',
+		description:
+			'Final-year computer science student building practical machine learning and data-driven projects. View my work, experience, and technical skills.',
+		siteName: 'Muhammad Zafar Portfolio',
+		images: [
+			{
+				url: '/profile.png',
+				width: 400,
+				height: 500,
+				alt: 'Muhammad Zafar Ul Haq Profile Picture',
+				type: 'image/png',
+			},
+		],
+		locale: 'en_US',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		creator: '@zafarulhaq1162014',
+		title: 'Muhammad Zafar Ul Haq | CS Student Portfolio',
+		description:
+			'Explore my machine learning projects, experience, and technical skills.',
+		images: ['/profile.png'],
+	},
+	icons: {
+		icon: '/favicon.png',
+		apple: '/favicon.png',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		'max-image-preview': 'large',
+		'max-snippet': -1,
+		'max-video-preview': -1,
+	},
+	formatDetection: {
+		email: true,
+		telephone: true,
+		address: true,
+	},
 };
 
 export default function RootLayout({
@@ -50,10 +89,56 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: 'Muhammad Zafar Ul Haq',
+		url: 'https://muhammadzafarulhaq.com',
+		image: 'https://muhammadzafarulhaq.com/profile.png',
+		description:
+			'Final-year computer science student and machine learning engineer',
+		jobTitle: 'Machine Learning Engineer',
+		sameAs: [
+			'https://github.com/zafar1162014',
+			'https://linkedin.com/in/mzafarulhaq',
+			'https://instagram.com/zafarulhaq1162014',
+			'https://facebook.com/zafarulhaq1162014',
+		],
+		email: 'zafarulhaq1162014@gmail.com',
+	};
+
 	return (
 		<html
 			lang="en"
 			suppressHydrationWarning>
+			<head>
+				<meta charSet="utf-8" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, maximum-scale=5"
+				/>
+				<meta
+					httpEquiv="X-UA-Compatible"
+					content="ie=edge"
+				/>
+				<meta
+					name="theme-color"
+					content="#000000"
+				/>
+				<link
+					rel="preconnect"
+					href="https://fonts.googleapis.com"
+				/>
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="anonymous"
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+			</head>
 			<body
 				className={`${headingFont.variable} ${bodyFont.variable} font-sans antialiased`}>
 				<ThemeProvider
@@ -62,8 +147,8 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					{children}
+					<Analytics />
 				</ThemeProvider>
-				<Analytics />
 			</body>
 		</html>
 	);

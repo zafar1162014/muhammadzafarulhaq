@@ -3,7 +3,17 @@
 import type React from 'react';
 
 import { useState } from 'react';
-import { Mail, Linkedin, Github, Send, Phone, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import {
+	Mail,
+	Linkedin,
+	Github,
+	Instagram,
+	Facebook,
+	Send,
+	Phone,
+	MapPin,
+} from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,20 +28,57 @@ export function ContactSection() {
 		message: '',
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [submitted, setSubmitted] = useState(false);
+	const [submitState, setSubmitState] = useState<{
+		type: 'success' | 'error' | null;
+		message: string;
+	}>({ type: null, message: '' });
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+
+		const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+		const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+		const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+		if (!serviceId || !templateId || !publicKey) {
+			setSubmitState({
+				type: 'error',
+				message:
+					'Contact form is not configured yet. Please try again later or email me directly.',
+			});
+			return;
+		}
+
 		setIsSubmitting(true);
+		setSubmitState({ type: null, message: '' });
 
-		// Simulate form submission
-		await new Promise((resolve) => setTimeout(resolve, 1000));
+		try {
+			await emailjs.send(
+				serviceId,
+				templateId,
+				{
+					from_name: formData.name,
+					from_email: formData.email,
+					subject: formData.subject,
+					message: formData.message,
+				},
+				{ publicKey },
+			);
 
-		setIsSubmitting(false);
-		setSubmitted(true);
-		setFormData({ name: '', email: '', subject: '', message: '' });
-
-		setTimeout(() => setSubmitted(false), 3000);
+			setSubmitState({
+				type: 'success',
+				message: 'Message sent successfully. Thank you for reaching out.',
+			});
+			setFormData({ name: '', email: '', subject: '', message: '' });
+		} catch {
+			setSubmitState({
+				type: 'error',
+				message:
+					'Something went wrong while sending your message. Please try again or email me directly.',
+			});
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	const handleChange = (
@@ -121,6 +168,20 @@ export function ContactSection() {
 								<Linkedin className="h-5 w-5" />
 							</Link>
 							<Link
+								href="https://www.instagram.com/zafarulhaq1162014/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+								<Instagram className="h-5 w-5" />
+							</Link>
+							<Link
+								href="https://www.facebook.com/zafarulhaq1162014/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+								<Facebook className="h-5 w-5" />
+							</Link>
+							<Link
 								href="mailto:zafarulhaq1162014@gmail.com"
 								className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
 								<Mail className="h-5 w-5" />
@@ -137,10 +198,12 @@ export function ContactSection() {
 								<Input
 									id="name"
 									name="name"
-									placeholder="Your name"
+									placeholder="Enter your full name"
 									value={formData.name}
 									onChange={handleChange}
+									autoComplete="name"
 									required
+									className="transition-all focus-visible:ring-2 focus-visible:ring-primary/60"
 								/>
 							</div>
 							<div className="space-y-2">
@@ -149,10 +212,12 @@ export function ContactSection() {
 									id="email"
 									name="email"
 									type="email"
-									placeholder="your@email.com"
+									placeholder="Enter your email address"
 									value={formData.email}
 									onChange={handleChange}
+									autoComplete="email"
 									required
+									className="transition-all focus-visible:ring-2 focus-visible:ring-primary/60"
 								/>
 							</div>
 						</div>
@@ -161,10 +226,11 @@ export function ContactSection() {
 							<Input
 								id="subject"
 								name="subject"
-								placeholder="What's this about?"
+								placeholder="Write a short subject"
 								value={formData.subject}
 								onChange={handleChange}
 								required
+								className="transition-all focus-visible:ring-2 focus-visible:ring-primary/60"
 							/>
 						</div>
 						<div className="space-y-2">
@@ -172,21 +238,32 @@ export function ContactSection() {
 							<Textarea
 								id="message"
 								name="message"
-								placeholder="Your message..."
+								placeholder="Write your message here"
 								rows={5}
 								value={formData.message}
 								onChange={handleChange}
 								required
+								className="transition-all focus-visible:ring-2 focus-visible:ring-primary/60"
 							/>
 						</div>
+						{submitState.type && (
+							<p
+								role="status"
+								aria-live="polite"
+								className={`text-sm rounded-md px-3 py-2 ${
+									submitState.type === 'success'
+										? 'bg-emerald-500/10 text-emerald-600'
+										: 'bg-red-500/10 text-red-600'
+								}`}>
+								{submitState.message}
+							</p>
+						)}
 						<Button
 							type="submit"
-							className="w-full gap-2"
+							className="w-full gap-2 transition-transform hover:-translate-y-0.5"
 							disabled={isSubmitting}>
 							{isSubmitting ? (
 								'Sending...'
-							) : submitted ? (
-								'Message Sent!'
 							) : (
 								<>
 									<Send className="h-4 w-4" />

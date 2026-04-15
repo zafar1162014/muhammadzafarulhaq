@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
+import { withBasePath } from '@/lib/base-path';
 
 const headingFont = Playfair_Display({
 	subsets: ['latin'],
@@ -15,6 +16,8 @@ const bodyFont = Space_Grotesk({
 	variable: '--font-body',
 	display: 'swap',
 });
+
+const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export const metadata: Metadata = {
 	title:
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
 	],
 	applicationName: 'Muhammad Zafar Portfolio',
 	creator: 'Muhammad Zafar Ul Haq',
-	metadataBase: new URL('https://muhammadzafarulhaq.com'),
+	metadataBase: new URL(`https://zafar1162014.github.io${siteBasePath}`),
 	alternates: {
 		canonical: '/',
 	},
@@ -92,8 +95,8 @@ export default function RootLayout({
 		'@context': 'https://schema.org',
 		'@type': 'Person',
 		name: 'Muhammad Zafar Ul Haq',
-		url: 'https://muhammadzafarulhaq.com',
-		image: 'https://muhammadzafarulhaq.com/profile.png',
+		url: `https://zafar1162014.github.io${siteBasePath}`,
+		image: `https://zafar1162014.github.io${siteBasePath}/profile.png`,
 		description:
 			'Final-year computer science student and machine learning engineer',
 		jobTitle: 'Machine Learning Engineer',

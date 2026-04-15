@@ -25,8 +25,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Verify prebuilt artifact
-        run: test -d out
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+        env:
+          GITHUB_REPOSITORY: zafar1162014/muhammadzafarulhaq
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

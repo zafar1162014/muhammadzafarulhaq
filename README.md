@@ -1,45 +1,37 @@
 # Muhammad Zafar Ul Haq Portfolio
 
-Modern Next.js portfolio focused on AI, Machine Learning, and full-stack project delivery.
+Simple personal portfolio built with Next.js and hosted on GitHub Pages.
 
-## Highlights
+## What It Includes
 
-- Featured Final Year Project: Protons EduVerse (currently 70% complete)
-- Dedicated Projects inventory with categorized GitHub repositories
-- Built-in Light/Night mode toggle in the header
-- Static export ready for GitHub Pages
+- Machine learning focused personal profile
+- Resume download
+- Projects, experience, and contact sections
+- Light and dark theme toggle
 
 ## Tech Stack
 
-- Next.js (App Router)
+- Next.js
 - TypeScript
 - Tailwind CSS
-- next-themes (theme switching)
-- GitHub Actions (automated Pages deployment)
+- next-themes
+- GitHub Pages
 
 ## Run Locally
 
-1. Install dependencies:
+1. Install dependencies.
 
 ```bash
 npm install
 ```
 
-2. Start development server:
+2. Start the development server.
 
 ```bash
 npm run dev
 ```
 
-3. Configure contact form environment variables:
-
-```bash
-cp .env.example .env.local
-```
-
-Then fill in the EmailJS values in `.env.local`.
-
-3. Open:
+3. Open the site.
 
 ```text
 http://localhost:3000
@@ -51,54 +43,15 @@ http://localhost:3000
 npm run build
 ```
 
-## Deploy to GitHub Pages
+## Deploy
 
-Deployment is handled by `.github/workflows/deploy.yml` on pushes to `main`.
+This project is set up for GitHub Pages with static export.
 
-### Contact Form (Static Hosting Compatible)
+## Contact
 
-The contact form uses EmailJS from the browser, so no backend server or API route is required.
-
-Create an EmailJS account and set these values:
-
-- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
-- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
-- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-
-For GitHub Pages deployment, add the same values in repository secrets:
-
-- `Settings > Secrets and variables > Actions > New repository secret`
-
-Use the exact same key names as above.
-
-EmailJS template variables expected by this form:
-
-- `from_name`
-- `from_email`
-- `subject`
-- `message`
-
-### One-time setup
-
-1. Open repository settings.
-2. Go to `Settings > Pages`.
-3. Set Source to `GitHub Actions`.
-4. Push to `main`.
-
-### Repository URL
-
-```text
-https://github.com/zafar1162014/muhammadzafarulhaq.git
-```
-
-### Expected site URL
-
-```text
-https://zafar1162014.github.io/muhammadzafarulhaq/
-```
+The contact form opens the user’s email app with a prefilled message, so no backend is needed.
 
 ## Notes
 
-- Static export is enabled through `output: "export"`.
-- `basePath` and `assetPrefix` are derived from `GITHUB_REPOSITORY` for project-page deployments.
-- Contact form submission is fully client-side and works on GitHub Pages through EmailJS.
+- `resume.pdf` and `profile.png` are served from the `public/` folder.
+- Asset paths are configured for GitHub Pages project hosting.

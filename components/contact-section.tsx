@@ -45,7 +45,8 @@ export function ContactSection() {
 		window.location.href = `mailto:zafarulhaq1162014@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 		setSubmitState({
 			type: 'success',
-			message: 'Your email app is opening so you can send this message directly.',
+			message:
+				'Your email app is opening so you can send this message directly.',
 		});
 		setFormData({ name: '', email: '', subject: '', message: '' });
 	};

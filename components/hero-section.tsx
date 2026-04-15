@@ -12,6 +12,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { withBasePath } from '@/lib/base-path';
 
 export function HeroSection() {
 	return (
@@ -65,7 +66,7 @@ export function HeroSection() {
 								size="lg"
 								className="gap-2 rounded-full px-7">
 								<a
-									href="/resume.pdf"
+									href={withBasePath('/resume.pdf')}
 									download="Muhammad-Zafar-Resume.pdf">
 									<Download className="h-4 w-4" />
 									Download Resume
@@ -115,7 +116,7 @@ export function HeroSection() {
 						<div className="relative w-full max-w-sm">
 							<div className="absolute inset-0 -z-10 bg-primary/20 blur-3xl rounded-2xl" />
 							<Image
-								src="/profile.png"
+								src={withBasePath('/profile.png')}
 								alt="Muhammad Zafar Ul Haq"
 								width={400}
 								height={500}

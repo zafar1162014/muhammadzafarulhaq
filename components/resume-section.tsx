@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { withBasePath } from '@/lib/base-path';
 
 const tabs = [
 	{ id: 'experience', label: 'Experience', icon: Briefcase },
@@ -270,7 +271,7 @@ export function ResumeSection() {
 							className="mt-4 gap-2 bg-transparent"
 							asChild>
 							<a
-								href="/resume.pdf"
+								href={withBasePath('/resume.pdf')}
 								download="Muhammad-Zafar-Resume.pdf">
 								<Download className="h-4 w-4" />
 								Download Resume

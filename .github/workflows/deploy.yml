@@ -38,6 +38,7 @@ jobs:
         run: npm run build
         env:
           GITHUB_REPOSITORY: zafar1162014/muhammadzafarulhaq
+          NEXT_PUBLIC_BASE_PATH: /muhammadzafarulhaq
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
